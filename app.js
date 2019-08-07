@@ -10,5 +10,12 @@ app.use(express.static('manager'));
 // 处理post请求体
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended:false}));
+const db = require('./dp.js')
+//下面是接口
 
-  
+app.get('/getHeroes',(req,res) =>{
+    res.send('select * from heroes',null,(err,result) => {
+        if(err) throw err
+        res.send(result)
+    })
+})
