@@ -207,6 +207,7 @@
     // 页面刷新发送ajax请求
 
     $.get('/getHeroes',function(res){
+      console.log(res);
       var str = template('moban',{
         arr:res
       })

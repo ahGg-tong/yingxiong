@@ -1,6 +1,6 @@
 module.exports = (syl,value,cb) => {
     const mysql = require('mysql')
-    const conn = mysql({
+    const conn = mysql.createConnection({
 
         host:'localhost',
         port:3306,
