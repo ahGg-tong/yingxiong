@@ -156,7 +156,25 @@
 
 
   <script>
+    $('.btn-add').click(function(e){
+      e.preventDefault();
+      var fd = new FormData($('form')[0]);
+      $.ajax({
+        type:'post',
+        url:'/addHero',
+        data:fd,
+        dataType:'json',
+        success:function(res){
+          alert(res.message);
+          if(res.code === 200){
+            location.href = '/index.html'
+          }
+        },
+        contentType: false,
+        processData: false
+      })
 
+    })
         
   
   
